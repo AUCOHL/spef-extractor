@@ -5,7 +5,7 @@ A Python library that reads LEF and DEF files, extracts the RC parasitics and ge
   In order to parse the lef and def files, we used [trimcao's def and lef parser](https://github.com/trimcao/lef-parser)
 
 ## Installing
-  `python3 -m pip install setup.py`
+  `python3 -m pip install git+https://github.com/Cloud-V/SPEF_EXTRACTOR`
 
 ## Using the library
 In order to use the project, use the terminal to run `main.py` using the following format.<br />
