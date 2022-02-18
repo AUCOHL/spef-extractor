@@ -1,21 +1,11 @@
 # SPEF-Extractor
 A Python library that reads LEF and DEF files, extracts the RC parasitics and generates their corresponding SPEF file.:<br />
 
-## Dependancies:  
+## Dependancies
   In order to parse the lef and def files, we used [trimcao's def and lef parser](https://github.com/trimcao/lef-parser)
 
-## Build Instructions:
-   To install the library run the following commands: 
-   ```
-   
-   pip install numpy
-   
-   pip install sympy
-  
-   pip install matplotlib   
-   
-   git clone https://github.com/Cloud-V/SPEF_EXTRACTOR/
-   ```
+## Installing
+  `python3 -m pip install setup.py`
 
 ## Using the library
 In order to use the project, use the terminal to run `main.py` using the following format.<br />
