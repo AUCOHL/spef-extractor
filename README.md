@@ -1,23 +1,36 @@
-# SPEF-Extractor
-A Python library that reads LEF and DEF files, extracts the RC parasitics and generates their corresponding SPEF file.:<br />
+# SPEF Extractor
+A Python library that reads LEF and DEF files, extracts the RC parasitics and generates their corresponding SPEF file.
 
-## Dependancies
-  In order to parse the lef and def files, we used [trimcao's def and lef parser](https://github.com/trimcao/lef-parser)
+# Dependencies
+* Python 3.6+ with PIP
 
-## Installing
-  `python3 -m pip install git+https://github.com/Cloud-V/SPEF_EXTRACTOR`
+# Installing
 
-## Using the library
-In order to use the project, use the terminal to run `main.py` using the following format.<br />
-`python3 main.py <lef_file_path> <def_file_path> <wire_model which can be L or Pi> <edge_capacitance_factor which is a value between 0 and 1 where the default is 1>` <br />
+`python3 -m pip install git+https://github.com/Cloud-V/SPEF_EXTRACTOR`
+
+# Usage
+````
+spef_extractor <lef_file_path> <def_file_path> <wire_model which can be L or Pi> <edge_capacitance_factor which is a value between 0 and 1 where the default is 1>
+```
+
 For example:
-`python3 main.py osu035.lef rle_rec.def L 1` <br />
-where `osu035.lef` is the provided lef file and `rle_rec.def` is its corresponding def file. Aftwards, we extract the RC parasitics and output them in a SPEF file named `rle_rec.spef` (holds the same name as the def file)
+
+```
+python3 main.py osu035.lef rle_rec.def L 1
+````
+
+
+where `osu035.lef` is the provided lef file and `rle_rec.def` is its corresponding def file. Aftwards, we extract the RC parasitics and output them in a SPEF file named `rle_rec.spef` (holds the same name as the def file by default).
+
+# The Development Process
+## Parsing
+In order to parse the lef and def files, we used [trimcao](https://github.com/trimcao)'s def and lef parser.
+
 
 ## Testing
 - Initially, we tested the generated SPEF manually. This was done through checking a number of nets, and comparing the parasitics in the file with the theoretical value.
-- Later on, we tested using "openSTA" that verified that the produced SPEF file is syntax error free. "openSTA" was able to successfuly read the SPEF file and produce timing reports based on the parasitics provided.
-- Additionally, we used openSTA to compare the delays for multiple designs using available spef files vs. our generated spef files.
+- Later on, we tested using OpenSTA to verify that the produced SPEF file is syntax error free. OpenSTA was able to successfuly read the SPEF file and produce timing reports based on the parasitics provided.
+- Additionally, we used OpenSTA to compare the delays for multiple designs using publicly available reference SPEF files vs. our generated SPEF files.
 
 ## Assumptions 
 During our development, we had to make some assumptions to for the sake of simplicity:
@@ -39,7 +52,10 @@ During our development, we had to make some assumptions to for the sake of simpl
 ## Acknowledgement:
   This was initially created for the Digital Design 2 Course CSCE3304 at the American University in Cairo under the supervision of Doctor Mohamed Shalan. Its development was ongoing afterwards as a part of an undergraduate research internship at the American Univeristy in Cairo.
 
-## Authors:
+## Original Authors:
   * Ramez Moussa - [Github Profile](https://github.com/ramezmoussa)
   * Hany Moussa - [Github Profile](https://github.com/hanymoussa)
+
+# License
+The Apache License, version 2.0. See `License`.
   
