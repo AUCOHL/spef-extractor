@@ -4,9 +4,8 @@ A Python library that reads LEF and DEF files, extracts the RC parasitics and ge
 # Dependencies
 * Python 3.6+ with PIP
 
-# Installing
-
-`python3 -m pip install git+https://github.com/Cloud-V/SPEF_EXTRACTOR`
+# Installation
+`python3 -m pip install spef-extractor`
 
 # Usage
 ````
