@@ -1,12 +1,22 @@
+import os
+import sys
+import subprocess
 from setuptools import setup, find_packages
-from spef_extractor.__init__ import __version__
+
+try:
+    version = (
+        subprocess.check_output(["git", "describe", "--tags"]).decode("utf8").strip()
+    )
+except subprocess.CalledProcessError:
+    print("spef-extractor must be built with a full Git clone.", file=sys.stderr)
+    exit(os.EX_DATAERR)
 
 requirements = open("requirements.txt").read().strip().split("\n")
 
 setup(
-    name="spef_extractor",
+    name="spef-extractor",
     packages=find_packages(),
-    version=__version__,
+    version=version,
     description="A parasitics estimator based on layout and technology files.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
