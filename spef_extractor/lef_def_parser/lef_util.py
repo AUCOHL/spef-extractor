@@ -403,10 +403,9 @@ class Layer(Statement):
         elif data[0] == "EDGECAPACITANCE":
             self.edge_cap = float(data[1])
         elif data[0] == "PROPERTY":
-            if data[1] != "LEF58_TYPE":
+            if not data[1].startswith("LEF58_"):
                 self.property = (data[1], float(data[2]))
         elif data[0] == "END":
-
             if data[1] == self.name:
                 return 1
             else:
